@@ -1,0 +1,115 @@
+@import "colors.styles.less";
+
+.font-size(@sizeValue) {
+  @remValue: @sizeValue;
+  @pxValue: (@sizeValue * 10);
+  font-size: ~"@{pxValue}px";
+  font-size: ~"@{remValue}rem";
+}
+
+//Typography Mixins Based on Angular Material Typography: https://material.angularjs.org/latest/CSS/typography
+.md-primary-text(dark; @color) {
+  color: fade(@color, @opacity-primary-dark * 100);
+}
+.md-primary-text(light; @color) {
+  color: fade(@color, @opacity-primary-light * 100);
+}
+
+.md-secondary-text(dark; @color) {
+  color: fade(@color, @opacity-secondary-dark * 100);
+}
+.md-secondary-text(light; @color) {
+  color: fade(@color, @opacity-secondary-light * 100);
+}
+
+.md-disabled-text(dark; @color) {
+  color: fade(@color, @opacity-disabled-dark * 100);
+}
+.md-disabled-text(light; @color) {
+  color: fade(@color, @opacity-disabled-light * 100);
+}
+
+.md-caption() {
+  .font-size(1.2);
+  font-family: 'default';
+}
+
+.md-section-label() {
+  .font-size(1.2);
+  font-family: 'default-medium';
+}
+
+.md-button() {
+  .font-size(1.4);
+  font-family: 'default-medium';
+  text-transform: uppercase;
+}
+
+.md-body-1() {
+  .font-size(1.4);
+  font-family: 'default';
+}
+
+.md-body-2() {
+  .size-multiplier-y(7, 4);
+  .font-size(1.4);
+  font-family: 'default-medium';
+  line-height: @size-y-result;
+}
+
+.md-subhead() {
+  .font-size(1.6);
+  .size-multiplier-y(8, 4);
+  font-family: 'default';
+  line-height: @size-y-result;
+}
+
+.md-title() {
+  .font-size(2.0);
+  .size-multiplier-y(10, 4);
+  font-family: 'default-medium';
+  line-height: @size-y-result;
+}
+
+.md-headline() {
+  .font-size(2.4);
+  font-family: 'default';
+}
+
+.md-display-1() {
+  .font-size(3.4);
+  font-family: 'default';
+}
+
+.md-display-2() {
+  .font-size(4.5);
+  font-family: 'default';
+}
+
+.md-display-3() {
+  .font-size(5.6);
+  font-family: 'default';
+}
+
+.md-display-4() {
+  .font-size(11.2);
+  font-family: 'default-light';
+}
+
+// Size Multiplier Mixin Set allows multiple sizes to be generated. Intended usage is to ensure width and height are
+// always defined on either the material design 8px grid (everything but iconography) or the material design 4px grid
+// which is to be used with iconography. Using -x at the end is intentional so that we can make a second mixin for the
+// y-axis if we determine that is necessary to ensure height is also on the appropriate grid. It will also allow for
+// multiple sizes of the same dimension (i.e. different min and max width)
+// sample usage:
+//    .size-multiplier-x(10, 8); // 8px grid, 10 'units', for a total of 80px
+//    width: @size-x-result;
+.size-multiplier-x(@multiplier, @multiplicand) {
+  @result: @multiplicand * @multiplier;
+  @size-x-result: ~"@{result}px";
+}
+
+.size-multiplier-y(@multiplier, @multiplicand) {
+  @result: @multiplicand * @multiplier;
+  @size-y-result: ~"@{result}px";
+}

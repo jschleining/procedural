@@ -1,0 +1,54 @@
+<md-whiteframe id="dashboard" class="md-whiteframe-1dp whiteframe-sizer" layout="column">
+
+  <section class="page-head border-bottom-1 layout-padding-horizontal" layout="row" layout-align="space-between center" md-colors="{'border-color': 'background-300'}">
+    <h4 class="no-margin-vertical layout-margin-horizontal layout-padding-horizontal">Dashboard</h4>
+  </section>
+
+  <section class="layout-padding-horizontal layout-padding-vertical layout-padding-bottom layout-margin-bottom border-bottom-1" layout="column" md-colors="{'border-color': 'background-300'}">
+    <div layout="row" class="layout-padding-vertical">
+      <h5 class="no-margin-vertical layout-margin-vertical layout-padding-horizontal">Grid Settings</h5>
+    </div>
+
+    <div layout="row" class="layout-padding-horizontal" layout-align="start center">
+      <div class="layout-padding-horizontal">
+        <input ng-model="vm.mapSize.name" type="text" class="layout-padding-vertical" placeholder="Name" md-colors="{'border-color': 'background-300'}">
+      </div>
+
+      <md-slider-container class="layout-padding-horizontal">
+        <span class="layout-margin-horizontal">Width</span>
+        <md-slider min="{{vm.settings.minWidth}}" max="{{vm.settings.maxWidth}}" step="2" ng-model="vm.mapSize.width" aria-label="" id="width-slider"></md-slider>
+        <span class="layout-margin-horizontal slider-value" md-colors="{'background-color': 'background-200', 'border-color': 'background-500'}">{{vm.mapSize.width}}</span>
+      </md-slider-container>
+
+      <md-slider-container class="layout-padding-horizontal">
+        <span class="layout-margin-horizontal">Height</span>
+        <md-slider min="{{vm.settings.minHeight}}" max="{{vm.settings.maxHeight}}" step="2" ng-model="vm.mapSize.height" aria-label="" id="height-slider"></md-slider>
+        <span class="layout-margin-horizontal slider-value" md-colors="{'background-color': 'background-200', 'border-color': 'background-500'}">{{vm.mapSize.height}}</span>
+      </md-slider-container>
+
+      <md-slider-container class="layout-padding-horizontal">
+        <span class="layout-margin-horizontal">Tile Sz</span>
+        <md-slider min="8" max="{{vm.settings.tileSize}}" step="8" ng-model="vm.mapSize.tileSize" ng-change="vm.updateSliders()" aria-label="" id="tileSize-slider"></md-slider>
+        <span class="layout-margin-horizontal slider-value" md-colors="{'background-color': 'background-200', 'border-color': 'background-500'}">{{vm.mapSize.tileSize}}</span>
+      </md-slider-container>
+    </div>
+
+    <div layout="row" class="layout-padding-horizontal" layout-align="space-around center">
+      <md-slider-container class="layout-padding-horizontal">
+        <span class="layout-margin-horizontal">Tries</span>
+        <md-slider min="{{vm.settings.minAttempts}}" max="{{vm.settings.maxAttempts}}" step="2" ng-model="vm.mapSize.roomAttempts" aria-label="" id="width-slider"></md-slider>
+        <span class="layout-margin-horizontal slider-value" md-colors="{'background-color': 'background-200', 'border-color': 'background-500'}">{{vm.mapSize.roomAttempts}}</span>
+      </md-slider-container>
+
+      <md-slider-container class="layout-padding-horizontal">
+        <span class="layout-margin-horizontal">Size</span>
+        <md-slider min="{{vm.settings.minExtraSize}}" max="{{vm.settings.maxExtraSize}}" step="1" ng-model="vm.mapSize.roomExtraSize" aria-label="" id="height-slider"></md-slider>
+        <span class="layout-margin-horizontal slider-value" md-colors="{'background-color': 'background-200', 'border-color': 'background-500'}">{{vm.mapSize.roomExtraSize}}</span>
+      </md-slider-container>
+    </div>
+  </section>
+  <section>
+    <dungeon-generator config="vm.mapSize"></dungeon-generator>
+  </section>
+
+</md-whiteframe>

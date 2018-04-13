@@ -1,0 +1,21 @@
+<div layout="column" id="dungeon-generator" class="layout-padding-vertical layout-margin-vertical">
+  <div layout="row" layout-align="center center" class="layout-margin-vertical">
+    <div layout="row" layout-align="space-between center" class="grid-stats">
+      <div layout="row" layout-align="start center">
+        <span class="layout-margin-horizontal">X: {{vm.canvasTiles.x}} / </span>
+        <span class="layout-margin-horizontal">Y: {{vm.canvasTiles.y}}</span>
+      </div>
+
+      <div>
+        <span>{{vm.localSettings.name}}</span>
+      </div>
+
+      <md-button class="md-raised md-primary" ng-click="vm.updateGrid()">Refresh</md-button>
+    </div>
+  </div>
+
+  <div layout="row" layout-align="center center" class="layout-margin-bottom">
+    <canvas id="grid"></canvas>
+  </div>
+</div>
+

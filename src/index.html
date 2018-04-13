@@ -1,0 +1,57 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<!-- Product of Integrate, Inc. 2018 -->
+
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Procedural Test</title>
+    <meta name="description" content="">
+
+    <!-- Remote Dependencies -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.7/angular-material.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- End Remote Dependencies -->
+    <link href="styles/colors.styles.less" type="text/less" rel="stylesheet">
+    <link href="styles/helper.styles.less" type="text/less" rel="stylesheet">
+    <link href="styles/mixins.styles.less" type="text/less" rel="stylesheet">
+    <link href="styles/global.styles.less" type="text/less" rel="stylesheet">
+    <link href="header/header.styles.less" type="text/less" rel="stylesheet">
+    <link href="dashboard/dashboard.styles.less" type="text/less" rel="stylesheet">
+    <link href="global/components/dungeon-generator/dungeon-generator.styles.less" type="text/less" rel="stylesheet">
+
+    <!--<base href="C:/Users/jschleining/Desktop/CodeTest/app-rewrite/src/">-->
+    <base href="/src/">
+  </head>
+
+  <body ng-app="proceduralApp" ng-controller="MainController as main">
+    <div id="outer-wrap" layout="column" flex="100">
+      <!--<ui-view></ui-view>-->
+      <div ui-view="header" id="header"></div>
+      <div ui-view="workspace" id="workspace"></div>
+    </div>
+
+    <!-- Remote Dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-aria.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-animate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.7/angular-material.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.0.1/less.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-moment/1.2.0/angular-moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-grid/4.2.4/ui-grid.min.js"></script>
+    <!-- End Remote Dependencies -->
+    <script src="app.js"></script>
+    <script src="global/services/utilities.service.js"></script>
+    <script src="global/controllers/main.controller.js"></script>
+    <script src="header/header.controller.js"></script>
+    <script src="dashboard/dashboard.controller.js"></script>
+    <script src="global/components/dungeon-generator/dungeon-generator.component.js"></script>
+    <script src="global/components/dungeon-generator/dungeon-generator.controller.js"></script>
+  </body>
+</html>
